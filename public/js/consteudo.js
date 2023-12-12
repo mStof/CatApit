@@ -26,6 +26,16 @@ const placeInfo = async () => {
     const catName = Array.from(document.querySelectorAll('.change'))
     catName.map((nome) => nome.textContent = info[1])
 
+    const characteristics = document.querySelectorAll('.characteristic .content .stars')
+    var q = 0
+    for (let i = 0; i < info[2].length; i++) {
+        for(let p = 0; p < 5; p++){
+            if(info[2][i] > p){
+                characteristics[p+q].setAttribute('src', '../images/Conteudo/assets/full_star.svg')
+            }
+        }
+        q = q + 5
+    }
 }
 placeImgs()
 placeInfo()

@@ -221,6 +221,7 @@ main.main section.pictures div.pictures_grid img{
     height: 100%;
     border-radius: 25px;
     object-fit: cover;
+    object-position: center;
     background-color: var(--100-pink);
 }
 main.main section.pictures div.pictures_grid img:first-child{

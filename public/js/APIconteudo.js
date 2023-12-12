@@ -1,5 +1,5 @@
 let pesquisaDoIndex = window.location.search.replace('?search_bar=', '')
-
+pesquisaDoIndex = 'kora'
 const ImgsPromise = () => new Promise((resolve, reject) => {
     const xhrImgs = new XMLHttpRequest()
     xhrImgs.open('GET', `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${pesquisaDoIndex}`)
@@ -28,7 +28,10 @@ const CatInfo = async () => {
     const result = await InfoPromise()
     const APICatName = result.name
     const APICatDescription = result.description
-    return [APICatDescription, APICatName]
+    const characteristics = [
+        result.health_issues, result.social_needs, result.intelligence, result.energy_level,
+        result.stranger_friendly, result.affection_level, result.adaptability, result.grooming]
+    return [APICatDescription, APICatName, characteristics]
 }
 const CatImgs = async () => {
     const imgs = await ImgsPromise()
