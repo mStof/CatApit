@@ -1,5 +1,6 @@
 let searchBar = document.querySelector('#search_bar')
 let resultBar = document.querySelector('pre.result')
+let btn = document.querySelector('.search')
 
 
 axios.get('https://api.thecatapi.com/v1/breeds')
@@ -21,6 +22,11 @@ axios.get('https://api.thecatapi.com/v1/breeds')
             resultBar.innerHTML+= `\n<p>${breedsFilter[i].name}</p>\n`
         }
     }
+    btn.addEventListener('submit', () => {
+        
+        const test = result.data.filter((e) => {return e.name == searchBar.value})
+        searchBar.value = test[0].id
+    })
     searchBar.addEventListener('keyup', getResult)
 })
 .catch((error) => {

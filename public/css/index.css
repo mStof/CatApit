@@ -10,7 +10,7 @@
     --white:#f5f5f5;
 }
 body{
-    background: url(../svg/index_bg.svg) no-repeat var(--white);
+    background: url(../images/index/index_bg.svg) no-repeat var(--white);
     height: 100vh;
     height: 100svh; 
     font-family: 'Josefin Sans', sans-serif;

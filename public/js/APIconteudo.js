@@ -1,4 +1,4 @@
-const pesquisaDoIndex = 'kora'
+const pesquisaDoIndex = window.location.search.replace('?search_bar=', '')
 // doq eu preciso? nome do gato, atributos, imagens e descrição
 axios.get('https://api.thecatapi.com/v1/breeds')
     .then((result) => {
@@ -11,10 +11,13 @@ axios.get('https://api.thecatapi.com/v1/breeds')
             const ApiGridImgs = imgs.data.map((img) => {
                 return img.url
             })
-            // export const Api = {
-            //     ApiCatName,
-            //     ApiCatDescription,
-            //     ApiGridImgs,
-            // }
+            
         })
 })
+// const exportar = () => {
+//     export default {
+//         ApiCatName: ApiCatName,
+//         ApiCatDescription :ApiCatDescription,
+//         ApiGridImgs: ApiGridImgs
+//     }
+// }

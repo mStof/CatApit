@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/icon_logo.svg" type="image/x-icon">
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script type="module" src="../js/APIconteudo.js"></script>
+    <script type="module" src="../js/consteudo.js"></script>
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/conteudo.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">
+            <img src="../images/Conteudo/nav_logo.svg" alt="" class="nav_logo">
+        </a>
+        <h2 class="nav_cat_name">Korat</h2>
+        <input type="checkbox" name="change_mode" id="inp_change_mode">
+        <label for="inp_change_mode" class="toggle_btn">
+            <div class="ball"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none" class="toggle_sun">
+                <circle cx="14.5001" cy="14.5001" r="6.86066" fill="#F5F5F5"/>
+                <path d="M23.5737 14.5H28" stroke="#F5F5F5" stroke-width="1.32787" stroke-linecap="round"/>
+                <path d="M1 14.5H5.42623" stroke="#F5F5F5" stroke-width="1.32787" stroke-linecap="round"/>
+                <path d="M14.5 5.42627L14.5 1.00004" stroke="#F5F5F5" stroke-width="1.32787" stroke-linecap="round"/>
+                <path d="M14.5 28L14.5 23.5738" stroke="#F5F5F5" stroke-width="1.32787" stroke-linecap="round"/>
+                <path d="M8.08374 8.08374L4.95392 4.95392" stroke="#F5F5F5" stroke-width="1.32787" stroke-linecap="round"/>
+                <path d="M24.0459 24.0459L20.9161 20.9161" stroke="#F5F5F5" stroke-width="1.32787" stroke-linecap="round"/>
+                <path d="M8.08374 20.9163L4.95392 24.0461" stroke="#F5F5F5" stroke-width="1.32787" stroke-linecap="round"/>
+                <path d="M24.0459 4.9541L20.9161 8.08392" stroke="#F5F5F5" stroke-width="1.32787" stroke-linecap="round"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="29" viewBox="0 0 27 29" fill="none" class="toggle_moon">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M27 21.6555C25.7878 21.9824 24.513 22.1568 23.1976 22.1568C15.153 22.1568 8.63165 15.6354 8.63165 7.59088C8.63165 4.80969 9.41113 2.21054 10.7635 0C4.56296 1.67224 0 7.33557 0 14.0646C0 22.1092 6.52138 28.6305 14.5659 28.6305C19.8293 28.6305 24.4406 25.8389 27 21.6555Z" fill="#199493"/>
+            </svg>
+        </label>
+    </nav>
+    <main class="main">
+        <section class="container">
+            <h1 class="cat_name">Korat</h1>
+            <img src="../images/Conteudo/gatinho.svg" alt="" class="gatinho">
+        </section>
+        <section class="characteristics">
+            <h2>characteristics of Korat</h2>
+            <div class="characteristic">
+                <div class="content health_issues">
+                    <img src="../images/Conteudo/icons/health_issues.svg" alt="health_issues Icon" class="health_issues_icon">
+                    <div class="star_rating">
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                    </div>
+                </div>
+                <div class="content happiness">
+                    <img src="../images/Conteudo/icons/happiness.svg" alt="happiness_icon" class="happiness_icon">
+                    <div class="star_rating">
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                    </div>
+                </div>
+                <div class="content intelligence">
+                    <img src="../images/Conteudo/icons/intelligence.svg" alt="intelligence Icon" class="intelligence_icon">
+                    <div class="star_rating">
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                    </div>
+                </div>
+                <div class="content energy_level">
+                    <img src="../images/Conteudo/icons/energy_level.svg" alt="energy Icon" class="energy_icon">
+                    <div class="star_rating">
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                    </div>
+                </div>
+                <div class="content stranger_friendly">
+                    <img src="../images/Conteudo/icons/stranger_friendly.svg" alt="stranger_friendly Icon" class="stranger_friendly_icon">
+                    <div class="star_rating">
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                    </div>
+                </div>
+                <div class="content affection_level">
+                    <img src="../images/Conteudo/icons/affection_level.svg" alt="affection Level Icon" class="affection_level_icon">
+                    <div class="star_rating">
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                    </div>
+                </div>
+                <div class="content adaptability">
+                    <img src="../images/Conteudo/icons/adaptability.svg" alt="adaptability Icon" class="adaptability_icon">
+                    <div class="star_rating">
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                    </div>
+                </div>
+                <div class="content grooming">
+                    <img src="../images/Conteudo/icons/grooming.svg" alt="grooming Icon" class="grooming_icon">
+                    <div class="star_rating">
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                        <img src="../images/Conteudo/assets/star_null.svg" class="stars"></img>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="description">
+            <p>
+                Lorem ipsum dolor sit amet consectetur.
+                Tristique sit odio quisque sem varius.
+                Tristique nisl nam id faucibus id gravida
+                urna enim ipsum. Neque semper nisl pellentesque semper.
+                Senectus sagittis lectus enim vel habitasse.
+            </p>
+        </section>
+        <section class="pictures">
+            <h2>Pictures of Korat</h2>
+            <div class="pictures_grid">
+                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+            </div>
+        </section>
+    </main>
+    <footer class="footerbar">
+        <img src="../images/Conteudo/gatinho.svg" alt="" class="gatinho">
+        <h2>Cat Miaw</h2>
+        <a href="../index.html">Voltar</a>
+    </footer>
+    
+    <script>
+        const inp_change_mode = document.querySelector('#inp_change_mode')
+        const gatinhoSvg = Array.from(document.querySelectorAll('.gatinho'))
+        const mudarGatinho = () => {
+            if(inp_change_mode.checked == true){
+                gatinhoSvg.map((svg) => {
+                    svg.setAttribute('src', '../images/Conteudo/gatinho_dark.svg')
+                })
+            }else{
+                gatinhoSvg.map((svg) => {
+                    svg.setAttribute('src', '../images/Conteudo/gatinho.svg')
+                })
+            }
+        }
+        inp_change_mode.addEventListener('change', mudarGatinho)
+    </script>
+
+</body>
+</html>
