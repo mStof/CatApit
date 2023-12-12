@@ -1,8 +1,8 @@
 const pesquisaDoIndex = window.location.search.replace('?search_bar=', '')
 
 const ImgsPromise = () => new Promise((resolve, reject) => {
-        const xhrImgs = new XMLHttpRequest()
-        xhrImgs.open('GET', `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${pesquisaDoIndex}`)
+    const xhrImgs = new XMLHttpRequest()
+    xhrImgs.open('GET', `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${pesquisaDoIndex}`)
         xhrImgs.send()
         xhrImgs.onreadystatechange = () => {
             if(xhrImgs.readyState === 4){     
@@ -12,24 +12,23 @@ const ImgsPromise = () => new Promise((resolve, reject) => {
 
 })
 const InfoPromise = () => new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest()
-        xhr.open('GET', 'https://api.thecatapi.com/v1/breeds')
-        xhr.onreadystatechange = () => {
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', 'https://api.thecatapi.com/v1/breeds')
+    xhr.send()
+    xhr.onreadystatechange = () => {
             if(xhr.readyState === 4){
-                const breed = JSON.parse(xhr.responseText).filter((breeds) => {return breeds.id == pesquisaDoIndex})[0]
-                return resolve(JSON.parse(xhr.responseText))
-            }
-            else{
-                return reject(error)
+                const breeds = JSON.parse(xhr.responseText)
+                const breed = breeds.find((breeds) => {return breeds.id == pesquisaDoIndex})
+                return resolve(breeds)
             }
         }
     })
 
 const CatInfo = async () => {
     const result = await InfoPromise()
+    console.dir(result)
     const APICatName = result.name
     const APICatDescription = result.description
-    console.log(result, APICatName, APICatDescription)
 }
 const CatImgs = async () => {
     const imgs = await ImgsPromise()
