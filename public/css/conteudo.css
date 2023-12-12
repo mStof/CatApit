@@ -104,8 +104,9 @@ main.main{
 main.main section.container{
     width: 100%;
     height: 100svh;
-    background-image: url(../images/Conteudo/Captura\ de\ Tela\ \(46\).png);
+    background-image: url(../images/Conteudo/default.jpg);
     background-attachment: fixed;
+    background-position: center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -220,6 +221,7 @@ main.main section.pictures div.pictures_grid img{
     height: 100%;
     border-radius: 25px;
     object-fit: cover;
+    background-color: var(--100-pink);
 }
 main.main section.pictures div.pictures_grid img:first-child{
     grid-column: 1 / 3;

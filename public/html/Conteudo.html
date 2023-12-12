@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/icon_logo.svg" type="image/x-icon">
+    <script type="module" src="../js/APIconteudo.js"></script>
 
-    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-   
     <title>Document</title>
 
     <link rel="stylesheet" href="../css/conteudo.css">
@@ -16,7 +15,7 @@
         <a href="../index.html">
             <img src="../images/Conteudo/nav_logo.svg" alt="" class="nav_logo">
         </a>
-        <h2 class="nav_cat_name">Korat</h2>
+        <h2 class="nav_cat_name"><span class="change"></span></h2>
         <input type="checkbox" name="change_mode" id="inp_change_mode">
         <label for="inp_change_mode" class="toggle_btn">
             <div class="ball"></div>
@@ -38,11 +37,11 @@
     </nav>
     <main class="main">
         <section class="container">
-            <h1 class="cat_name">Korat</h1>
+            <h1 class="cat_name"><span class="change"></span></h1>
             <img src="../images/Conteudo/gatinho.svg" alt="" class="gatinho">
         </section>
         <section class="characteristics">
-            <h2>characteristics of Korat</h2>
+            <h2>characteristics of <span class="change"></span></h2>
             <div class="characteristic">
                 <div class="content health_issues">
                     <img src="../images/Conteudo/icons/health_issues.svg" alt="health_issues Icon" class="health_issues_icon">
@@ -136,18 +135,18 @@
             </p>
         </section>
         <section class="pictures">
-            <h2>Pictures of Korat</h2>
+            <h2>Pictures of <span class="change"></span></h2>
             <div class="pictures_grid">
-                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
-                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
-                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
-                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
-                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
-                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
-                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
-                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
-                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
-                <img src="../images/Conteudo/Captura de Tela (46).png" alt="" class="cats_images">
+                <img src="../images/Conteudo/default.jpg" class="cats_images">
+                <img src="../images/Conteudo/default.jpg" class="cats_images">
+                <img src="../images/Conteudo/default.jpg" class="cats_images">
+                <img src="../images/Conteudo/default.jpg" class="cats_images">
+                <img src="../images/Conteudo/default.jpg" class="cats_images">
+                <img src="../images/Conteudo/default.jpg" class="cats_images">
+                <img src="../images/Conteudo/default.jpg" class="cats_images">
+                <img src="../images/Conteudo/default.jpg" class="cats_images">
+                <img src="../images/Conteudo/default.jpg" class="cats_images">
+                <img src="../images/Conteudo/default.jpg" class="cats_images">
             </div>
         </section>
     </main>
@@ -173,7 +172,6 @@
         }
         inp_change_mode.addEventListener('change', mudarGatinho)
     </script>
-    <script type="module" src="../js/APIconteudo.js"></script>
     <script type="module" src="../js/consteudo.js"></script>
  
 
