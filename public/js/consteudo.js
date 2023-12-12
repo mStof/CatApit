@@ -1,1 +1,4 @@
-import { ApiCatName, ApiCatDescription, ApiGridImgs } from "./APIconteudo.js";
+// import { CatImgs, CatInfo } from "./APIconteudo.js";
+
+// console.log(CatInfo())
+// console.log(CatImgs())
