@@ -1,27 +1,4 @@
-// class Data {
-//     constructor(name, description, imgs){
-//         this.CatName = name,
-//         this.CatDescription = description,
-//         this.Catimgs = imgs
-//     }        
-// }
-
 const pesquisaDoIndex = window.location.search.replace('?search_bar=', '')
-// doq eu preciso? nome do gato, atributos, imagens e descrição
-// axios.get('https://api.thecatapi.com/v1/breeds')
-//     .then((result) => {
-//         const breed = result.data.filter((breeds) => {return breeds.id == pesquisaDoIndex})[0]
-//         const ApiCatName = breed.name
-//         const ApiCatDescription = breed.description
-        
-//         axios.get(`https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${pesquisaDoIndex}`)
-//         .then((imgs) => {
-//             const ApiGridImgs = imgs.data.map((img) => {
-//                 return img.url
-//             })
-//         })
-//     })
-
 
 const ImgsPromise = () => new Promise((resolve, reject) => {
         const xhrImgs = new XMLHttpRequest()
@@ -40,12 +17,13 @@ const InfoPromise = () => new Promise((resolve, reject) => {
         xhr.onreadystatechange = () => {
             if(xhr.readyState === 4){
                 const breed = JSON.parse(xhr.responseText).filter((breeds) => {return breeds.id == pesquisaDoIndex})[0]
-                return resolve(breed)
+                return resolve(JSON.parse(xhr.responseText))
+            }
+            else{
+                return reject(error)
             }
         }
     })
-
-
 
 const CatInfo = async () => {
     const result = await InfoPromise()
