@@ -1,5 +1,4 @@
 let pesquisaDoIndex = window.location.search.replace('?search_bar=', '')
-pesquisaDoIndex = 'kora'
 const ImgsPromise = () => new Promise((resolve, reject) => {
     const xhrImgs = new XMLHttpRequest()
     xhrImgs.open('GET', `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${pesquisaDoIndex}`)
