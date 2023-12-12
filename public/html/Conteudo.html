@@ -170,7 +170,17 @@
                 })
             }
         }
+        const saveTheme = () => {
+            console.log(inp_change_mode.checked)
+            localStorage.setItem('theme', inp_change_mode.checked)
+            console.log('localStorage: ' + localStorage.getItem('theme'))
+        }
+        const applyTheme = () => {
+            inp_change_mode.checked = (localStorage.getItem('theme') == 'true') ? true : false
+        }
         inp_change_mode.addEventListener('change', mudarGatinho)
+        inp_change_mode.addEventListener('change', saveTheme)
+        applyTheme()
     </script>
     <script type="module" src="../js/consteudo.js"></script>
  
