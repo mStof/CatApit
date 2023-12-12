@@ -30,13 +30,14 @@ nav.navbar{
     background-color: var(--100-green);
     width: 100%;
     height: 75px;
-    padding-inline: 32px;
+    padding-inline: min(32px, 5%);
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 4px 5px 1px #0003;
 }
 nav.navbar img.nav_logo{
+    width: min(65px, 90%);
     aspect-ratio: 1/1;
     object-fit: cover;
     vertical-align: center;
@@ -95,6 +96,7 @@ nav.navbar label.toggle_btn div.ball{
 #inp_change_mode:checked + label.toggle_btn svg.toggle_moon path{
     fill: var(--100-white-text);
 }
+
 main.main{
     position: relative;
     /* background-color: aquamarine; */
@@ -119,15 +121,17 @@ main.main section.container::after{
     background-color: #F7A1A450;
 }
 main.main section.container h1.cat_name{
-    font-size: 8rem;
+    font-size: clamp(3rem, 20vw + 1rem, 8rem);
     font-weight: 700;
     color: var(--100-white-text);
     text-shadow: 4px 4px 4px #0007;
     isolation: isolate;
     z-index: 1;
     text-transform: uppercase;
+    text-align: center;
 }
 main.main img.gatinho{
+    width: min(85%, 526px);
     position: absolute;
     inset: 100% 0 0 50%;
     transform: translate(-50%, -60%);
@@ -146,18 +150,18 @@ main.main section.characteristics{
 }
 main.main section.characteristics h2{
     color: var(--100-green-text);
-    font-size: 3rem;
+    font-size: min(3rem, 10vw);
     font-weight: 700;
     text-transform: uppercase;
+    text-align: center;
 }
 main.main section.characteristics div.characteristic{
-    /* background-color: red; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 32px 90px;
-    padding: 0px 100px;
+    gap: 32px clamp(16px, 5vw, 90px);
+    padding: 0px min(100px, 10%);
 }
 main.main section.characteristics div.characteristic > div{
     border-radius: 100px;
@@ -178,7 +182,7 @@ main.main section.characteristics div.characteristic div.star_rating{
 }
 main.main section.description{
     background-color: var(--100-green);
-    padding: 32px 250px;
+    padding: 32px min(15%, 250px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,11 +205,13 @@ main.main section.pictures h2{
     font-size: 3rem;
     font-weight: 700;
     text-transform: uppercase;
+    text-align: center;
 }
 main.main section.pictures div.pictures_grid{
-    width: 944px;
+    /* background-color: red; */
+    width: min(944px, 80%);
     display: grid;
-    grid-template-columns: repeat(5, 176px);
+    grid-template-columns: repeat(5, max(1fr, 120px));
     grid-template-rows: repeat(3, 100px);
     gap: 32px 16px;
 }
@@ -229,21 +235,23 @@ footer.footerbar{
     background-color: var(--100-green);
     position: relative;
     display: flex;
-    align-items: center;
+    
     /* justify-content: center; */
     padding: 200px 0px 32px 0px;
 }
 footer.footerbar img.gatinho{
+    width: min(85%, 526px);
     position: absolute;
-    inset: -100% 0 0 50%;
-    transform: translate(-50%, 30%);
+    inset: 00% 0 0 50%;
+    transform: translate(-50%, -60%);
     user-select: none;
 }
 footer.footerbar h2{
-    font-size: 8rem;
+    font-size: clamp(3rem, 15vw + 1rem, 8rem);
     font-weight: 300;
     color: var(--100-white-text);
     margin-inline: auto;
+    align-self: center;
 }
 footer.footerbar a{
     position: absolute;
@@ -260,4 +268,15 @@ footer.footerbar a:hover{
 *::selection{
     background-color: #f5f5f5;
     color: var(--100-green);
+}
+@media (max-width:500px) {
+    footer.footerbar{
+        justify-content: center;
+    }
+    footer.footerbar h2{
+        transform: translateY(max(-70px, -60%));
+    }
+    footer.footerbar a{
+        margin-inline: auto;
+    }
 }
