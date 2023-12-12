@@ -1,5 +1,4 @@
 let pesquisaDoIndex = window.location.search.replace('?search_bar=', '')
-pesquisaDoIndex = 'rblu'
 
 const ImgsPromise = () => new Promise((resolve, reject) => {
     const xhrImgs = new XMLHttpRequest()
