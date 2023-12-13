@@ -25,6 +25,7 @@ const placeInfo = async () => {
 
     const catName = Array.from(document.querySelectorAll('.change'))
     catName.map((nome) => nome.textContent = info[1])
+    document.title = info[1]
 
     const characteristics = document.querySelectorAll('.characteristic .content .stars')
     var q = 0
