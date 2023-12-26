@@ -33,6 +33,7 @@ const placeInfo = async () => {
         for(let p = 0; p < 5; p++){
             if(info[2][i] > p){
                 characteristics[p+q].setAttribute('src', '../images/Conteudo/assets/full_star.svg')
+                characteristics[p+q].setAttribute('alt', 'full star')
             }
         }
         q = q + 5
