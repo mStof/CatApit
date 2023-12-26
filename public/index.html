@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="description" content="A web site to search cat breeds and know your characteristics, by: Mstof">
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/icon_logo.svg" type="image/x-icon">
-    <title>HoMeaw</title>
+    <title>HoMeaw - Cat Database</title>
     <link rel="stylesheet" href="css/index.css">
 
 </head>
@@ -17,9 +18,13 @@
         <main class="search_area">
             <h1 class="title">Cat Miaw</h1>
             <form action="html/Conteudo.html" method="get" class="search">
-                <input type="text" name="search_bar" id="search_bar" autocomplete="off">
-                <input type="submit" id="enviar_search" value="">
-                <label for="enviar_search"><img class="lupa_img" src="images/index/lupa.svg" alt="Pesquisar"></label>
+                <label for="search_bar">
+                    <input placeholder="Your breed" type="text" name="search_bar" id="search_bar" autocomplete="off">
+                </label>
+                <input type="submit" id="enviar_search">
+                <label for="enviar_search">
+                    <img class="lupa_img" src="images/index/lupa.svg" alt="Pesquisar">
+                </label>
                 <pre class="result"></pre>
             </form>
         </main>
