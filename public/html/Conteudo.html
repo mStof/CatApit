@@ -156,6 +156,12 @@
         <h2>Cat Miaw</h2>
         <a href="../index.html">Voltar</a>
     </footer>
+
+    <!-- Modal section -->
+    <div class="modal_screen">
+        <span class="close_modal">x</span>
+        <img src="../images/Conteudo/gatinho.svg" alt="cat_image" class="modal_image">
+    </div>
     
     <script>
         const inp_change_mode = document.querySelector('#inp_change_mode')
@@ -178,6 +184,23 @@
         inp_change_mode.addEventListener('click', mudarGatinho)
         inp_change_mode.addEventListener('click', saveTheme)
         applyTheme()
+    </script>
+    <script>
+        const modalScreen = document.querySelector('.modal_screen')
+        const modalImage = document.querySelector('.modal_image')
+        const gridImages = document.querySelectorAll('.pictures_grid .cats_images')
+        
+        const closeModal = () => {
+            modalScreen.style.display = 'none'
+        }
+
+        const openModal = (e) => {
+            modalScreen.style.display = 'grid'
+            modalImage.setAttribute('src', e.target.src)
+            console.log(e.target.src)
+        }
+        gridImages.forEach(img => img.addEventListener('click', openModal))
+        document.querySelector('.close_modal').addEventListener('click', closeModal)
     </script>
     <script type="module" src="../js/consteudo.js"></script>
  
