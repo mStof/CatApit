@@ -173,7 +173,46 @@ main.main section.characteristics div.characteristic > div{
     align-items: center;
     justify-content: space-between;
     padding-inline: 32px;
+    position: relative;
 }
+main.main section.characteristics div.characteristic > div::after{
+    content: attr(title);
+    background-color: var(--100-pink);
+    width: max-content;
+    height: fit-content;
+    padding: 8px 16px;
+    border-radius: 5px;
+    position: absolute;
+    inset: -40% 0 0 50%;
+    transform: translateX(-50%);
+
+    color: #f5f5f5;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: -2px 2px 4px #0005;
+
+    opacity: 0;
+    transition: opacity 250ms;
+
+}
+main.main section.characteristics div.characteristic > div::before{
+    content: url(../images/Conteudo/assets/tooltip_arrow.svg);
+    /* background-color: black; */
+    width: max-content;
+    height: max-content;
+    position: absolute;
+    inset: -25px 0 0 50%;
+    transform: translateX(-50%);
+    transform: rotate(180deg);
+    opacity: 0;
+    transition: opacity 250ms;
+}
+main.main section.characteristics div.characteristic > div:hover::before,
+main.main section.characteristics div.characteristic > div:hover::after{
+
+    opacity: 1;
+} 
 main.main section.characteristics div.characteristic div.star_rating{
     display: flex;
     flex-wrap: wrap;

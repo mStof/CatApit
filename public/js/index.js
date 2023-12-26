@@ -1,6 +1,6 @@
 let searchBar = document.querySelector('#search_bar')
 let resultBar = document.querySelector('pre.result')
-let btn = document.querySelector('.search')
+let form = document.querySelector('.search')
 
 
 axios.get('https://api.thecatapi.com/v1/breeds')
@@ -18,11 +18,23 @@ axios.get('https://api.thecatapi.com/v1/breeds')
             }
         
         })
-       for (let i = 0; i < breedsFilter.length; i++) {
-            resultBar.innerHTML+= `\n<p>${breedsFilter[i].name}</p>\n`
+        for (let i = 0; i < breedsFilter.length; i++) {
+            resultBar.innerHTML+= `\n<p class="option" tabindex="0">${breedsFilter[i].name}</p>\n`
         }
+        const options = document.querySelectorAll('.option')
+        options.forEach((opt) => {
+            opt.addEventListener('keyup', ({ key }) => {
+                console.log(key)
+                if(key == ' ' || key == 'Enter'){
+                    opt.click()
+                    const test = result.data.filter((e) => {return e.name == searchBar.value})
+                    searchBar.value = test[0].id
+                    form.submit()
+                }
+            })
+        })
     }
-    btn.addEventListener('submit', () => {
+    form.addEventListener('submit', () => {
         
         const test = result.data.filter((e) => {return e.name == searchBar.value})
         searchBar.value = test[0].id
@@ -38,3 +50,4 @@ axios.get('https://api.thecatapi.com/v1/breeds')
 resultBar.addEventListener('click', (e) => {
     searchBar.value = e.target.textContent
 })
+
