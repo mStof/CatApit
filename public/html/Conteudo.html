@@ -161,26 +161,22 @@
         const inp_change_mode = document.querySelector('#inp_change_mode')
         const gatinhoSvg = Array.from(document.querySelectorAll('.gatinho'))
         const mudarGatinho = () => {
-            if(inp_change_mode.checked == true){
-                gatinhoSvg.map((svg) => {
-                    svg.setAttribute('src', '../images/Conteudo/gatinho_dark.svg')
-                })
-            }else{
-                gatinhoSvg.map((svg) => {
-                    svg.setAttribute('src', '../images/Conteudo/gatinho.svg')
-                })
-            }
+            const catImageMode = 
+             (inp_change_mode.checked == true) ? '../images/Conteudo/gatinho_dark.svg' : '../images/Conteudo/gatinho.svg'
+            gatinhoSvg.map(svg => svg.setAttribute('src', catImageMode))
         }
+
         const saveTheme = () => {
-            console.log(inp_change_mode.checked)
             localStorage.setItem('theme', inp_change_mode.checked)
-            console.log('localStorage: ' + localStorage.getItem('theme'))
         }
         const applyTheme = () => {
-            inp_change_mode.checked = (localStorage.getItem('theme') == 'true') ? true : false
+            const boolInpValue = localStorage.getItem('theme') == 'true'
+            console.log(boolInpValue)
+            inp_change_mode.checked = boolInpValue
+            mudarGatinho()
         }
-        inp_change_mode.addEventListener('change', mudarGatinho)
-        inp_change_mode.addEventListener('change', saveTheme)
+        inp_change_mode.addEventListener('click', mudarGatinho)
+        inp_change_mode.addEventListener('click', saveTheme)
         applyTheme()
     </script>
     <script type="module" src="../js/consteudo.js"></script>
