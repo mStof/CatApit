@@ -31,7 +31,7 @@ nav.navbar{
     background-color: var(--100-green);
     width: 100%;
     height: 75px;
-    padding-inline: min(32px, 5%);
+    padding-inline: 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -123,7 +123,7 @@ main.main section.container::after{
     background-color: #F7A1A450;
 }
 main.main section.container h1.cat_name{
-    font-size: clamp(3rem, 20vw + 1rem, 8rem);
+    font-size: clamp(1rem, 10vw + 1rem, 8rem);
     font-weight: 700;
     color: var(--100-white-text);
     text-shadow: 4px 4px 4px #0007;
@@ -211,7 +211,6 @@ main.main section.characteristics div.characteristic > div::before{
 }
 main.main section.characteristics div.characteristic > div:hover::before,
 main.main section.characteristics div.characteristic > div:hover::after{
-
     opacity: 1;
 } 
 main.main section.characteristics div.characteristic div.star_rating{
@@ -325,17 +324,6 @@ nav.navbar *::selection{
     background-color: var(--100-white-text);
     color: var(--100-green);
 }
-@media (max-width:500px) {
-    footer.footerbar{
-        justify-content: center;
-    }
-    footer.footerbar h2{
-        transform: translateY(max(-70px, -60%));
-    }
-    footer.footerbar a{
-        margin-inline: auto;
-    }
-}
 
 div.modal_screen{
     height: 100vh;
@@ -364,4 +352,21 @@ div.modal_screen span.close_modal{
     cursor: pointer;
     user-select: none;
     font-family: 'Nunito', sans-serif;
+}
+
+@media (max-width:500px) {
+    footer.footerbar{
+        justify-content: center;
+    }
+    footer.footerbar h2{
+        transform: translateY(max(-70px, -60%));
+    }
+    footer.footerbar a{
+        margin-inline: auto;
+    }
+}
+@media (max-width: 450px) {
+    nav.navbar h2.nav_cat_name{
+        display: none;
+    }
 }
