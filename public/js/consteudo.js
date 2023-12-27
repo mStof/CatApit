@@ -17,6 +17,13 @@ const placeImgs = async () => {
         }
         
     }
+    gridImgs.forEach((img) => {
+        img.addEventListener('keyup', ({ key }) => {
+            if(key == ' ' || key == 'Enter'){
+                img.click()
+            }
+        })
+    })
 }
 const placeInfo = async () => {
     const info = await CatInfo()

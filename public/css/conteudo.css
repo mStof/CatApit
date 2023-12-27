@@ -263,7 +263,14 @@ main.main section.pictures div.pictures_grid img{
     object-fit: cover;
     object-position: center;
     background-color: var(--100-pink);
+    cursor: pointer;
+    transition: transform 300ms, opacity 300ms;
 }
+main.main section.pictures div.pictures_grid:has(img:hover) img:not(:hover){
+    transform: scale(0.9);
+    opacity: .7;
+}
+
 main.main section.pictures div.pictures_grid img:first-child{
     grid-column: 1 / 3;
 }

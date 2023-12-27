@@ -92,8 +92,10 @@ pre.result{
     inset: auto auto auto 50%;
     transform: translateX(-50%);
     overflow: auto;
+    
 
 }
+
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 pre.result {
@@ -122,6 +124,7 @@ pre.result p{
     font-weight: 300;
     font-family: 'Josefin Sans', sans-serif;
     position: relative;
+    cursor: pointer;
 }
 pre.result p::after{
     content: '';
@@ -132,4 +135,9 @@ pre.result p::after{
     position: absolute;
     inset: 100% auto auto 50%;
     transform: translate(-50%, 0%);
+    transition: background-color 250ms;
 }
+pre.result p:hover::after{
+    background-color: var(--white);
+}
+

@@ -138,16 +138,16 @@
         <section class="pictures">
             <h2>Pictures of <span class="change"></span></h2>
             <div class="pictures_grid">
-                <img src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
-                <img src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
-                <img src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
-                <img src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
-                <img src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
-                <img src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
-                <img src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
-                <img src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
-                <img src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
-                <img src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
+                <img tabindex="0" src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
+                <img tabindex="0" src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
+                <img tabindex="0" src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
+                <img tabindex="0" src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
+                <img tabindex="0" src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
+                <img tabindex="0" src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
+                <img tabindex="0" src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
+                <img tabindex="0" src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
+                <img tabindex="0" src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
+                <img tabindex="0" src="../images/Conteudo/default.jpg" alt="Image of cat" class="cats_images">
             </div>
         </section>
     </main>
@@ -159,7 +159,7 @@
 
     <!-- Modal section -->
     <div class="modal_screen">
-        <span class="close_modal">x</span>
+        <span tabindex="0" class="close_modal">x</span>
         <img src="../images/Conteudo/gatinho.svg" alt="cat_image" class="modal_image">
     </div>
     
@@ -189,18 +189,31 @@
         const modalScreen = document.querySelector('.modal_screen')
         const modalImage = document.querySelector('.modal_image')
         const gridImages = document.querySelectorAll('.pictures_grid .cats_images')
+        const closeModalBtn = document.querySelector('.close_modal')
         
         const closeModal = () => {
             modalScreen.style.display = 'none'
+            document.querySelector('body').style.overflow = 'auto'
+            closeModalBtn.setAttribute('tabindex', -1)
         }
 
         const openModal = (e) => {
             modalScreen.style.display = 'grid'
             modalImage.setAttribute('src', e.target.src)
             console.log(e.target.src)
+            document.querySelector('body').style.overflow = 'hidden'
+            closeModalBtn.setAttribute('tabindex', 0)
         }
+        closeModalBtn.addEventListener('keyup', ({ key }) => {
+            if(key == ' ' || key == 'Enter'){
+                closeModalBtn.click()
+            }
+        })
         gridImages.forEach(img => img.addEventListener('click', openModal))
-        document.querySelector('.close_modal').addEventListener('click', closeModal)
+        closeModalBtn.addEventListener('click', closeModal)
+    </script>
+    <script>
+
     </script>
     <script type="module" src="../js/consteudo.js"></script>
  
